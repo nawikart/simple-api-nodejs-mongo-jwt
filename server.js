@@ -2,6 +2,7 @@ const express = require('express');
 const logger = require('morgan');
 const foods = require('./routes/foods') ;
 const users = require('./routes/users');
+const goals = require('./routes/goals');
 const mp3 = require('./routes/mp3');
 const bodyParser = require('body-parser');
 const mongoose = require('./config/database'); //database configuration
@@ -24,6 +25,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // });
 // public route
 app.use('/api/users', users);
+app.use('/api/goals', goals);
 app.use('/api/mp3', mp3);
 // private route
 app.use('/api/foods', validateUser, foods);
