@@ -17,7 +17,9 @@ goalModel.find({}, function(err, goals){
     next(err);
    } else{
     for (let goal of goals) {
-      goalsList.push({category: goal.category, description: food.description, id: food.id, percent_completed: food.percent_completed, status: food.status, session_id: food.session_id });
+      goalsList.push({category: goal.category, description: goal.description, 
+        id: goal._id, percent_completed: goal.percent_completed, status: goal.status,
+         session_id: goal.session_id });
     }
     res.json({status:"success", message: "Goals list found!!!", data:{goals: goalsList}});
        
@@ -45,7 +47,7 @@ deleteById: function(req, res, next) {
 create: function(req, res, next) {
   goalModel.create({ 
     
-    category: req.body.category, description: req.body.description, id: req.body.id, 
+    category: req.body.category, description: req.body.description,   
     percent_completed: req.body.percent_completed, status: req.body.status, 
     session_id: req.body.session_id, 
 

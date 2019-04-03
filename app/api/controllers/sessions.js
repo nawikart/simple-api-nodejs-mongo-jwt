@@ -18,7 +18,8 @@ sessionModel.find({}, function(err, sessions){
    } else{
     for (let session of sessions) {
      sessionsList.push({
-       id: session.id, category: session.category, title: session.title,
+       id: session._id,
+        category: session.category, title: session.title,
        description: session.description, mp3_url: session.mp3_url,
        length: session.length
       });
@@ -48,7 +49,7 @@ deleteById: function(req, res, next) {
  },
 create: function(req, res, next) {
   sessionModel.create({ 
-    id: req.body.id, category: req.body.category, title: req.body.title,
+      category: req.body.category, title: req.body.title,
        description: req.body.description, mp3_url: req.body.mp3_url,
        length: req.body.length
     

@@ -12,11 +12,7 @@ const GoalSchema = new Schema({
     trim: true,
     required: true
    },
-   id: {
-    type: String,
-    trim: true,
-    required: true
-   },
+ 
    percent_completed: {
     type: String,
     trim: true,
