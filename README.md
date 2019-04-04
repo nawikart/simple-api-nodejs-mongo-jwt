@@ -1,3 +1,74 @@
+
+# Account
+## Register
+
+
+**URL:** http://localhost:3000/api/accounts/register
+
+**Method:** POST
+
+**sample post data**
+
+|  field | example value   | mandatory   | description  |
+| ------------ | ------------ | ------------ | ------------ |
+|  name | sample name   |  required |  type string |
+|  email | sampleemail@somedomain.tld   | required  | type string  |
+|  password | samplepassword  |  required  | type string   |
+|  organization |  sample organization | required  | type string  |
+ 
+
+
+**sample success response**
+```javascript
+{
+    "status": "success",
+    "message": "Session added successfully!!!",
+    "data": null
+}
+```
+**sample failed respon**
+```javascript
+{
+    "message": "Something looks wrong :( !!!"
+}
+```
+
+
+## Login
+
+**URL:** http://localhost:3000/api/accounts/login
+
+**Method:** POST
+
+**sample post data**
+
+|  field | example value   | mandatory   | description  |
+| ------------ | ------------ | ------------ | ------------ |
+|  email | sampleemail@somedomain.tld | required  | type string  |
+|  password | samplepassword  |  required  | type string   |
+ 
+
+
+**sample success response**
+```javascript
+{
+    "id": "5ca63547e2fda23f384dd19e",
+    "email": "sampleemail@somedomain.tld ",
+    "iorganizationd": "Lambda Collective LLC",
+    "api_token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVjYTYzNTQ3ZTJmZGEyM2YzODRkZDE5ZSIsImlhdCI6MTU1NDM5NzIyNywiZXhwIjoxNTU0NDAwODI3fQ.zDa7rvqI7tMqbJmzbPcHis8THVLkx-sZonasXXcGq3M"
+}
+```
+**sample failed respon**
+```javascript
+{
+    "status": "error",
+    "message": "Invalid email/password!!!",
+    "data": null
+}
+```
+
+## Me
+
 # SESSIONS
 
 ## Create Session

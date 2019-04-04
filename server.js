@@ -1,6 +1,7 @@
 const express = require('express');
 const logger = require('morgan');
-const foods = require('./routes/foods') ;
+//const foods = require('./routes/foods') ;
+const accounts = require('./routes/accounts');
 const users = require('./routes/users');
 const goals = require('./routes/goals');
 const sessions = require('./routes/sessions');
@@ -25,12 +26,13 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // res.json({"tutorial" : "Build REST API with node.js"});
 // });
 // public route
+app.use('/api/accounts', accounts);
 app.use('/api/users', users);
 app.use('/api/goals', goals);
 app.use('/api/sessions', sessions);
 app.use('/api/mp3', mp3);
 // private route
-app.use('/api/foods', validateUser, foods);
+//app.use('/api/foods', validateUser, foods);
 app.get('/favicon.ico', function(req, res) {
     res.sendStatus(204);
 });
