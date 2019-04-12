@@ -15,7 +15,7 @@
 |  email | sampleemail@somedomain.tld   | required  | type string  |
 |  password | samplepassword  |  required  | type string   |
 |  organization |  sample organization | required  | type string  |
- 
+
 
 
 **sample success response**
@@ -46,7 +46,7 @@
 | ------------ | ------------ | ------------ | ------------ |
 |  email | sampleemail@somedomain.tld | required  | type string  |
 |  password | samplepassword  |  required  | type string   |
- 
+
 
 
 **sample success response**
@@ -108,7 +108,7 @@
 **URL:** http://localhost:3000/api/sessions
 
 **Method:** GET
- 
+
 **sample success response**
 ```javascript
 {
@@ -144,7 +144,7 @@
     }
 }
 ```
- 
+
 
 # Goals
 
@@ -174,6 +174,7 @@
 }
 ```
 **sample failed respon**
+
 ```javascript
 {
     "message": "Something looks wrong :( !!!"
@@ -185,7 +186,7 @@
 **URL:** http://localhost:3000/api/goals
 
 **Method:** GET
- 
+
 **sample success response**
 ```javascript
 {
@@ -213,5 +214,65 @@
     }
 }
 ```
- 
+
+# Emotions
+
+## Create Emotions
+
+**URL:** http://localhost:3000/api/emotions
+
+**Method:** POST
+
+**sample post data**
+
+| field   | example value | mandatory | description |
+| ------- | ------------- | --------- | ----------- |
+| emotion | Calm          | required  | type string |
+
+**sample success response**
+
+```javascript
+{
+    "status": "success",
+    "message": "Emotions added successfully!!!",
+    "data": null
+}
+```
+
+**sample failed respon**
+
+```javascript
+{
+    "message": "Something looks wrong :( !!!"
+}
+```
+
+## List Emotions
+
+**URL:** http://localhost:3000/api/emotions
+
+**Method:** GET
+
+**sample success response**
+
+```javascript
+{
+    "status": "success",
+    "message": "Emotions list found!!!",
+    "data": {
+        "emotion": [
+            {
+                "emotion": "Calm",
+                "id": "5ca47ec896964d51f46e6120",
+                 
+            },
+            {
+                "emotion": "Emotional",
+                "id": "5ca47f1496964d51f46e6121",
+                
+            }
+        ]
+    }
+}
+```
 
